@@ -1,0 +1,38 @@
+<div class="container">
+    <label id="radio-group-label">{{questionNumber}}. {{currentQuestion.question}}</label>
+    <img *ngIf="currentQuestion.imageHref" class="images" src="assets/images/{{currentQuestion.imageHref}}">
+    <mat-radio-group id={{currentQuestion.id}} aria-labelledby="radio-group-label" class="radio-group"
+        [(ngModel)]="currentQuestion.selected">
+        <mat-radio-button (click)="radioClick(answer.answerNum)" class="radio-button"
+            *ngFor="let answer of currentQuestion.answers" [value]="answer.answerNum">
+            <span id="answers">{{answer.answers}}</span>
+        </mat-radio-button>
+    </mat-radio-group>
+    <div *ngIf="showCorrect">
+        <span id="correctAnswerText">Correct answer: </span>
+        <span id="correctAnswer">{{currentQuestion.correctAnswer}}</span>
+    </div>
+    <div *ngIf="showCorrect">
+        <span id="explanationText">Explanation: </span>
+        <span id="explanation">{{currentQuestion.explanation}}</span>
+    </div>
+    <div>
+        <button id="previousButton" type="button" class="btn btn-danger" (click)="previous()">Previous</button>
+        <div class="divider"></div>
+
+        <button *ngIf="!showSubmit" id="nextButton" type="button" class="btn btn-primary" (click)="next()">Next</button>
+        <button *ngIf="showSubmit" id="submitButton" type="button" class="btn btn-success"
+            (click)="submit()">Submit</button>
+    </div>
+
+    <div *ngIf="showCorrect && pass" id="passScoreGrid">
+        <span id="correctRatio">{{correct}}/{{questions.length}}</span>
+        <span id="percentage">{{percentage}}%</span>
+        <span id="gradeText">Pass</span>
+    </div>
+    <div *ngIf="showCorrect && !pass" id="failScoreGrid">
+        <span id="correctRatio">{{correct}}/{{questions.length}}</span>
+        <span id="percentage">{{percentage}}%</span>
+        <span id="gradeText">Fail</span>
+    </div>
+</div>

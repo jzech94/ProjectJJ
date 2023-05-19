@@ -1,0 +1,63 @@
+<!-- <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="example-form">
+        <table class="example-full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+              <input matInput placeholder="Username" [(ngModel)]='username' name="username" required>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+          <td><mat-form-field class="example-full-width">
+            <input matInput placeholder="Password" [(ngModel)]="password" type="password" name="password" required>
+          </mat-form-field></td>
+        </tr></table>
+      </form>
+      <mat-spinner [style.display]="showSpinner ? 'block' : 'none'"></mat-spinner>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="login()" color="primary">Login</button>
+    </mat-card-actions>
+  </mat-card> -->
+
+
+  <!-- main app container -->
+<div class="d-flex justify-content-center">
+    <div class="card m-3">
+            <h5 class="card-header">Login</h5>
+            <div class="card-body">
+                <form name="form" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" name="login-username" id="login-username" class="form-control" [(ngModel)]="model.username" #username="ngModel" [ngClass]="{ 'is-invalid': f.submitted && username.invalid }" required username>
+                        <div *ngIf="f.submitted && username.invalid" class="invalid-feedback">
+                            <div *ngIf="username.errors.required">Username is required</div>
+                        </div>
+
+                        
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <label>Password</label>
+                            <input type="password" name="login-password" id="login-password" class="form-control" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6">
+                            <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                                <div *ngIf="password.errors.required">Password is required</div>
+                                <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button class="btn btn-primary mr-1" name="login-submit" id="login-submit">Login</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+    </div>
