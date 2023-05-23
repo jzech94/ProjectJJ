@@ -9,4 +9,5 @@ export default interface IQuestion {
     "explanation": string
     "imageHref": string
     "selected": number
+    "isCorrect":boolean
 }

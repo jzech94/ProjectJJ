@@ -73,6 +73,7 @@ export class QuizComponent {
       for (let i = 0; i < this.questions.length; i++) {
         if (this.questions[i].correctAnswerNum === this.questions[i].selected) {
           this.correct++;
+          this.questions[i].isCorrect=true;
         }
       }
       this.percentage = Math.round(this.correct / this.questions.length * 100);
@@ -80,6 +81,19 @@ export class QuizComponent {
       if (this.percentage >= 70) {
         this.pass = true;
       }
+    }
+  }
+
+  gotoQuestion(questionNum:number){
+    console.log(questionNum);
+    this.questionNumber = questionNum;
+    this.currentQuestion = this.questions[questionNum - 1];
+    this.questionIndex = questionNum - 1;
+    if (this.questionIndex < this.questions.length - 1) {
+      this.showSubmit = false;
+    }
+    if (this.questionIndex === this.questions.length - 1) {
+      this.showSubmit = true;
     }
   }
 

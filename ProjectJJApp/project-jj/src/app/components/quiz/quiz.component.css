@@ -92,3 +92,19 @@ label {
 #gradeText{
   margin-left: 50px;
 }
+
+#questionButton{
+  border-radius: 50%;
+  border: none;
+  color: rgba(8, 1, 1, 0.527);
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+#gotoDiv{
+  padding-top: 15px;
+}

@@ -24,6 +24,9 @@
         <button *ngIf="showSubmit" id="submitButton" type="button" class="btn btn-success"
             (click)="submit()">Submit</button>
     </div>
+    <div id="gotoDiv" *ngIf="showCorrect">
+        <button mat-button id="questionButton" *ngFor="let num of questions"  [ngStyle]="{ 'background-color': num.isCorrect ? 'green' : 'red' }" (click)="gotoQuestion(num.id)">{{num.id}}</button>
+    </div>
 
     <div *ngIf="showCorrect && pass" id="passScoreGrid">
         <span id="correctRatio">{{correct}}/{{questions.length}}</span>
@@ -35,4 +38,5 @@
         <span id="percentage">{{percentage}}%</span>
         <span id="gradeText">Fail</span>
     </div>
+
 </div>

@@ -10,4 +10,5 @@ export class Question implements IQuestion{
     "explanation" : string
     "imageHref": string
     "selected": number
+    "isCorrect":boolean = false;
 }
