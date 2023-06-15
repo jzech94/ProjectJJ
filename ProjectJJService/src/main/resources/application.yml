@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:mydb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: jz
+    password: admin123
+    driverClassName: org.h2.Driver
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  h2:
+    console.enabled: true
+  sql:
+    init:
+      mode: always
+rsa:
+  private.key: classpath:app.private.key
+  public.key: classpath:app.public.key
+jwt:
+  secret.key: 546A576E5A7234753778214125442A472D4A614E645267556B58703273357638

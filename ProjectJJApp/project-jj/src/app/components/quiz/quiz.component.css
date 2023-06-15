@@ -1,0 +1,110 @@
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+
+}
+
+.radio-button {
+  margin: 5px;
+}
+
+.divider {
+  width: 500px;
+  height: auto;
+  display: inline-block;
+}
+
+#previousButton {
+  text-align: left;
+}
+
+#nextButton {
+  text-align: right;
+}
+
+#submitButton {
+  text-align: right;
+}
+
+.images {
+  text-align: center;
+  display: block;
+
+}
+
+label {
+  font-size: 40px;
+}
+
+#answers {
+  font-size: 25px;
+}
+
+
+#correctAnswer {
+  font-size: 20px;
+}
+
+#correctAnswerText {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#explanation {
+  font-size: 20px;
+}
+
+#explanationText {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#correctRatio {
+  text-align: center;
+}
+
+#passScoreGrid{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-right: 700px;
+  margin-left: 80px;
+  font-size: 40px;
+  background-color: rgb(79, 252, 79);
+}
+
+#failScoreGrid{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-right: 700px;
+  margin-left: 80px;
+  font-size: 40px;
+  background-color: rgb(255, 0, 0);
+}
+
+#percentage{
+  margin-left: 50px;
+}
+
+#gradeText{
+  margin-left: 50px;
+}
+
+#questionButton{
+  border-radius: 50%;
+  border: none;
+  color: rgba(8, 1, 1, 0.527);
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+#gotoDiv{
+  padding-top: 15px;
+}
